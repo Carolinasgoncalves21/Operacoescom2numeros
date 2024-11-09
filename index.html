@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8" />
-    <title>Operações com 2 números</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações Aritméticas</title>
+</head>
+<body>
 
-  </head>
-  <body>
-    <main>
-    </main>
-    <script src="sketch.js"></script>
-  </body>
+    <h1>Operações Aritméticas</h1>
+    
+    <p id="resultado"></p> <!-- Aqui serão exibidos os resultados -->
+
+    <script>
+        // Solicitar os números ao usuário
+        let num1 = prompt("Digite um número:");
+        let num2 = prompt("Digite outro número:");
+        
+        // Converter as entradas para números
+        num1 = Number(num1);
+        num2 = Number(num2);
+        
+        // Verificar se os valores são válidos
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Por favor, digite números válidos.");
+        } else {
+            // Exibir os resultados na página
+            const resultado = document.getElementById("resultado");
+            resultado.innerHTML = `
+                <strong>A soma é:</strong> ${num1 + num2} <br>
+                <strong>A subtração é:</strong> ${num1 - num2} <br>
+                <strong>A multiplicação é:</strong> ${num1 * num2} <br>
+                <strong>A divisão é:</strong> ${num1 / num2}
+            `;
+        }
+    </script>
+
+</body>
 </html>
